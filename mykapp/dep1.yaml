@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: website-deploy
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: website
@@ -13,7 +13,7 @@ spec:
         app: website
     spec:
       containers:
-      - name: mypodinfo
-        image: stefanprodan/podinfo:5.1.0
-        ports:
-        - containerPort: 9898
+        - name: mypodinfo
+          image: stefanprodan/podinfo:5.1.0
+          ports:
+            - containerPort: 9898
